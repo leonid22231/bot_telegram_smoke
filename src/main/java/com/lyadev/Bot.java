@@ -22,7 +22,7 @@ public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         String message = update.getMessage().getText();
-       if(message.equals("/Start")){
+       if(message.equals("/start")){
            sendMsg(update.getMessage().getChatId().toString(), "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
 
        }

@@ -24,7 +24,9 @@ public class Bot extends TelegramLongPollingBot {
         String message = update.getMessage().getText();
        if(message.equals("/start")){
            sendMsg(update.getMessage().getChatId().toString(), "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
-
+       }
+       if(message.equals("Поддержать бота")){
+sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк : 2202-2010-0225-4700");
        }
     }
 

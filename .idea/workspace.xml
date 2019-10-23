@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74ebd32f-18be-4953-9bd2-8255b77263d3" name="Default Changelist" comment="Test commit">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyadev/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyadev/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lyadev/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyadev/App.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -10,6 +14,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -82,7 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571850627830</updated>
       <workItem from="1571850630367" duration="282000" />
-      <workItem from="1571851459558" duration="6249000" />
+      <workItem from="1571851459558" duration="11208000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit">
       <created>1571856703170</created>
@@ -112,7 +123,28 @@
       <option name="project" value="LOCAL" />
       <updated>1571857963491</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Test commit">
+      <created>1571858015229</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571858015229</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Test bot">
+      <created>1571859370159</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571859370159</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Test commit">
+      <created>1571859442731</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571859442731</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +163,42 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Heroku Support" />
+    <MESSAGE value="Test bot" />
     <MESSAGE value="Test commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Test commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lyadev/App.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java</url>
+          <line>25</line>
+          <properties class="com.lyadev.Bot" method="sendMsg">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

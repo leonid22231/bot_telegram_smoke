@@ -71,7 +71,7 @@ sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк 
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId);
-
+sendMessage.setText(null);
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
         List<InlineKeyboardButton> buttons1 = new ArrayList<>();
         buttons1.add(new InlineKeyboardButton().setText(s).setCallbackData("17"));
@@ -79,6 +79,7 @@ sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк 
 
         InlineKeyboardMarkup markupKeyboard = new InlineKeyboardMarkup();
         markupKeyboard.setKeyboard(buttons);
+
     sendMessage.setReplyMarkup(markupKeyboard);
         try {
             sendMessage(sendMessage);

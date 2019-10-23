@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74ebd32f-18be-4953-9bd2-8255b77263d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java" afterDir="false" />
-    </list>
+    <list default="true" id="74ebd32f-18be-4953-9bd2-8255b77263d3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571850627830</updated>
       <workItem from="1571850630367" duration="282000" />
-      <workItem from="1571851459558" duration="15116000" />
+      <workItem from="1571851459558" duration="15368000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit">
       <created>1571856703170</created>
@@ -212,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571866183504</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Button">
+      <created>1571866861750</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1571866861750</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

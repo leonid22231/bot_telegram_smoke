@@ -28,6 +28,9 @@ public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         String message = update.getMessage().getText();
+        if(message.equals("17")){
+            System.out.println("KEKEKEKKEKE");
+        }
        if(message.equals("/start")){
            sendMsg(update.getMessage().getChatId().toString(), "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
        setInline(update.getMessage().getChatId().toString(),"ъьъ");
@@ -68,11 +71,10 @@ sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк 
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId);
-        sendMessage.setText(s);
 
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
         List<InlineKeyboardButton> buttons1 = new ArrayList<>();
-        buttons1.add(new InlineKeyboardButton().setText("Еуы").setCallbackData(String.valueOf(17)));
+        buttons1.add(new InlineKeyboardButton().setText(s).setCallbackData("17"));
         buttons.add(buttons1);
 
         InlineKeyboardMarkup markupKeyboard = new InlineKeyboardMarkup();

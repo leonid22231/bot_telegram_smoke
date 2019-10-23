@@ -1,5 +1,8 @@
 package com.lyadev;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
@@ -12,6 +15,7 @@ import org.telegram.telegrambots.generics.WebhookBot;
 import org.telegram.telegrambots.logging.BotLogger;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -27,6 +31,20 @@ public class Bot extends TelegramLongPollingBot {
        }
        if(message.equals("Поддержать бота")){
 sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк : 2202-2010-0225-4700");
+       }
+       if(message.equals("Сигареты")){
+           String url = "https://www.tabacum.ru/info/cigarette";
+           Document doc = null;
+           try {
+               doc = Jsoup.connect(url).get();
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+           Elements listbrand = doc.select("div.brand-selector");
+           String[] a = listbrand.text().split(" ");
+           for (int i = 0 ; i < a.length ; i++){
+               sendMsg(update.getMessage().getChatId().toString(),a[i]);
+           }
        }
     }
 

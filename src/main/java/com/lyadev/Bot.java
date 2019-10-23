@@ -5,7 +5,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
+import org.telegram.telegrambots.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
+import org.telegram.telegrambots.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardButton;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -28,6 +30,7 @@ public class Bot extends TelegramLongPollingBot {
         String message = update.getMessage().getText();
        if(message.equals("/start")){
            sendMsg(update.getMessage().getChatId().toString(), "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
+       setInline();
        }
        if(message.equals("Поддержать бота")){
 sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк : 2202-2010-0225-4700");
@@ -61,6 +64,15 @@ sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк 
         } catch (TelegramApiException e) {
             log(Level.SEVERE, "Exception: ", e.toString());
         }
+    }
+    private void setInline() {
+        List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
+        List<InlineKeyboardButton> buttons1 = new ArrayList<>();
+        buttons1.add(new InlineKeyboardButton().setText("test").setCallbackData(String.valueOf(17)));
+        buttons.add(buttons1);
+
+        InlineKeyboardMarkup markupKeyboard = new InlineKeyboardMarkup();
+        markupKeyboard.setKeyboard(buttons);
     }
     @Override
     public String getBotUsername() {

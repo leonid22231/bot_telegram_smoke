@@ -35,6 +35,7 @@ public class App extends TelegramLongPollingBot
         if (txt.equals("/start")) {
             sendMsg(msg, "Hello, world! This is simple bot!");
         }
+        System.out.println("test");
     }
 
     @Override

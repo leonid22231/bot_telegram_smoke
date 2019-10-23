@@ -24,6 +24,7 @@ public class Bot extends TelegramLongPollingBot {
         String message = update.getMessage().getText();
        if(message.equals("/Start")){
            sendMsg(update.getMessage().getChatId().toString(), "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
+
        }
     }
 
@@ -33,9 +34,10 @@ public class Bot extends TelegramLongPollingBot {
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId);
         sendMessage.setText(s);
+        setButtons(sendMessage);
         try {
            sendMessage(sendMessage);
-           setButtons(sendMessage);
+
         } catch (TelegramApiException e) {
             log(Level.SEVERE, "Exception: ", e.toString());
         }

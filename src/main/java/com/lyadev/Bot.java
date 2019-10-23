@@ -4,6 +4,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
+import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
@@ -74,7 +75,7 @@ sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк 
 sendMessage.setText(s);
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
         List<InlineKeyboardButton> buttons1 = new ArrayList<>();
-        buttons1.add(new InlineKeyboardButton().setText("{}{}").setCallbackData("17"));
+        buttons1.add(new InlineKeyboardButton().setText("{}{}").setCallbackData("test"));
         buttons.add(buttons1);
 
         InlineKeyboardMarkup markupKeyboard = new InlineKeyboardMarkup();

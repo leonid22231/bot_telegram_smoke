@@ -25,16 +25,11 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.telegram</groupId>
-      <artifactId>telegrambots</artifactId>
-      <version>LATEST</version>
-    </dependency>
-    <dependency>
-      <groupId>org.telegram</groupId>
-      <artifactId>telegrambotsextensions</artifactId>
-      <version>LATEST</version>
-    </dependency>
+      <dependency>
+          <groupId>org.telegram</groupId>
+          <artifactId>telegrambots</artifactId>
+          <version>3.5</version>
+      </dependency>
   </dependencies>
 
   <build>

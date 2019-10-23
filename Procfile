@@ -1,2 +1,1 @@
-worker: sh target/bin/bot_telegram_smoke
-web: sh target/bin/bot_telegram_smoke
+worker: java -jar target/bot_telegram_smoke-1.0-SNAPSHOT-jar-with-dependencies.jar -a tobacconist-bot

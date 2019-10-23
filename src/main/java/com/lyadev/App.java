@@ -21,9 +21,10 @@ public class App
 
     public static void main( String[] args )
     {
-        System.getProperties().put( "proxySet", "true" );
-        System.getProperties().put( "socksProxyHost", "157.245.217.102" );
-        System.getProperties().put( "socksProxyPort", "80" );
+        System.out.println("Starting...");
+//        System.getProperties().put( "proxySet", "true" );
+//        System.getProperties().put( "socksProxyHost", "157.245.217.102" );
+//        System.getProperties().put( "socksProxyPort", "80" );
         ApiContextInitializer.init();
         TelegramBotsApi botapi = new TelegramBotsApi();
         try {
@@ -31,7 +32,7 @@ public class App
         }catch (TelegramApiRequestException e){
             e.printStackTrace();
         }
-        System.err.println("Hello, logs!");
+        System.out.println("Hello, logs!");
     }
 
 

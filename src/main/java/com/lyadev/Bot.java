@@ -18,13 +18,13 @@ public class Bot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         String message = update.getMessage().getText();
         sendMsg(update.getMessage().getChatId().toString(), message);
-        System.out.println(update.getMessage());
-        BotLogger.log(Level.ALL,"Pizda","Test");
+       if(message.equals("/Start")){
+           sendMsg(update.getMessage().getChatId().toString(), "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
+       }
     }
 
 
     public synchronized void sendMsg(String chatId, String s) {
-        System.out.println("Help");
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId);

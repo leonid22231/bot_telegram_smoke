@@ -30,7 +30,7 @@ public class Bot extends TelegramLongPollingBot {
         String message = update.getMessage().getText();
        if(message.equals("/start")){
            sendMsg(update.getMessage().getChatId().toString(), "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
-       setInline(update.getMessage().getChatId().toString(),"бля");
+       setInline(update.getMessage().getChatId().toString(),"ъьъ");
        }
        if(message.equals("Поддержать бота")){
 sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк : 2202-2010-0225-4700");
@@ -64,7 +64,7 @@ sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк 
             log(Level.SEVERE, "Exception: ", e.toString());
         }
     }
-    private SendMessage setInline(String chatId, String s) {
+    private synchronized void setInline(String chatId, String s) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId);
@@ -78,8 +78,12 @@ sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк 
         InlineKeyboardMarkup markupKeyboard = new InlineKeyboardMarkup();
         markupKeyboard.setKeyboard(buttons);
     sendMessage.setReplyMarkup(markupKeyboard);
+        try {
+            sendMessage(sendMessage);
+        } catch (TelegramApiException e) {
+            log(Level.SEVERE, "Exception: ", e.toString());
+        }
 
-    return sendMessage;
     }
     @Override
     public String getBotUsername() {

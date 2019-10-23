@@ -26,6 +26,7 @@ public class App extends TelegramLongPollingBot
         }catch (TelegramApiException e){
             e.printStackTrace();
         }
+        System.err.println("Hello, logs!");
     }
 
     @Override

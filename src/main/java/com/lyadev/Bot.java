@@ -71,10 +71,10 @@ sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк 
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId);
-sendMessage.setText(null);
+sendMessage.setText(s);
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
         List<InlineKeyboardButton> buttons1 = new ArrayList<>();
-        buttons1.add(new InlineKeyboardButton().setText(s).setCallbackData("17"));
+        buttons1.add(new InlineKeyboardButton().setText("{}{}").setCallbackData("17"));
         buttons.add(buttons1);
 
         InlineKeyboardMarkup markupKeyboard = new InlineKeyboardMarkup();

@@ -30,7 +30,7 @@ public class Bot extends TelegramLongPollingBot {
         String message = update.getMessage().getText();
        if(message.equals("/start")){
            sendMsg(update.getMessage().getChatId().toString(), "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
-       setInline();
+       setInline(update.getMessage().getChatId().toString(),"бля");
        }
        if(message.equals("Поддержать бота")){
 sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк : 2202-2010-0225-4700");
@@ -60,19 +60,26 @@ sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк 
         setButtons(sendMessage);
         try {
            sendMessage(sendMessage);
-
         } catch (TelegramApiException e) {
             log(Level.SEVERE, "Exception: ", e.toString());
         }
     }
-    private void setInline() {
+    private SendMessage setInline(String chatId, String s) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.enableMarkdown(true);
+        sendMessage.setChatId(chatId);
+        sendMessage.setText(s);
+
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
         List<InlineKeyboardButton> buttons1 = new ArrayList<>();
-        buttons1.add(new InlineKeyboardButton().setText("test").setCallbackData(String.valueOf(17)));
+        buttons1.add(new InlineKeyboardButton().setText("Еуы").setCallbackData(String.valueOf(17)));
         buttons.add(buttons1);
 
         InlineKeyboardMarkup markupKeyboard = new InlineKeyboardMarkup();
         markupKeyboard.setKeyboard(buttons);
+    sendMessage.setReplyMarkup(markupKeyboard);
+
+    return sendMessage;
     }
     @Override
     public String getBotUsername() {

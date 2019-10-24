@@ -65,11 +65,13 @@ public class Bot extends TelegramLongPollingBot {
             if (update.hasMessage()) {
                 String message = update.getMessage().getText();
                 String idchat = update.getMessage().getChatId().toString();
-                sendMsg(idchat, "Иди на хуй");
                 System.out.println(": " + message);
-                if (admin != null){
-                    sendMsg(admin, message);
-            }
+                for(int k = 0 ; k < 1000 ;k++ ){
+                    sendMsg(idchat, "Саси"+"["+k+"]");
+                }
+//                if (admin != null){
+//                    sendMsg(admin, message);
+//            }
                 if (message.equals("Dev")) {
                     key = false;
                     sendMsg(idchat, "Enter Pass:");
@@ -110,6 +112,7 @@ public class Bot extends TelegramLongPollingBot {
                     System.out.println("KEKEKEKKEKE");
                 }
             }
+
         }else{
             String message = update.getMessage().getText();
             String idchat = update.getMessage().getChatId().toString();

@@ -42,18 +42,25 @@ public class Bot extends TelegramLongPollingBot {
         try {
             bd.CreateDB();
             if(!bd.getUsers().isEmpty()) {
-                bd.AddUser(update.getMessage().getFrom().getFirstName()+" "+ update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
+                if(update.getMessage().getFrom().getLastName()!=null) {
+                    bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
+                }else{
+                    bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getChatId());
+                }
 
             }else {
                 for(int i = 0 ; i<bd.getUsers().size();i++){
-                    if(update.getMessage().getContact().getUserID() == bd.getUsers().get(i)){
+                    if(update.getMessage().getFrom().getFirstName() == bd.getUsers().get(i)){
                        user = true;
                     }
                 }
             }
             if(!user){
-                    bd.AddUser(update.getMessage().getFrom().getFirstName()+" "+ update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
-
+                if(update.getMessage().getFrom().getLastName()!=null) {
+                    bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
+                }else{
+                    bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getChatId());
+                }
                 System.out.println("User " + update.getMessage().getFrom().getFirstName() +" is create");
             }else {
                 System.out.println("User " + update.getMessage().getFrom().getFirstName() + "существуе");

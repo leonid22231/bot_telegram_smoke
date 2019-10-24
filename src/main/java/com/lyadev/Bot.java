@@ -1,5 +1,6 @@
 package com.lyadev;
 
+import com.lyadev.BD.bd;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -20,6 +21,7 @@ import org.telegram.telegrambots.logging.BotLogger;
 
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -33,6 +35,26 @@ public class Bot extends TelegramLongPollingBot {
     boolean run = false;
     @Override
     public void onUpdateReceived(Update update) {
+       boolean user = false;
+        try {
+            if(!bd.getUsers().isEmpty()) {
+                bd.AddUser(update.getMessage().getContact().getFirstName() + " " + update.getMessage().getContact().getLastName(), update.getMessage().getContact().getUserID());
+            }else {
+                for(int i = 0 ; i<bd.getUsers().size();i++){
+                    if(update.getMessage().getContact().getUserID() == bd.getUsers().get(i)){
+                       user = true;
+                    }
+                }
+            }
+            if(!user){
+                bd.AddUser(update.getMessage().getContact().getFirstName() + " " + update.getMessage().getContact().getLastName(), update.getMessage().getContact().getUserID());
+                System.out.println("User " + update.getMessage().getContact().getFirstName() +" is create");
+            }else {
+                System.out.println("User " + update.getMessage().getContact().getFirstName() + "существуе");
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         if(run) {
             if (update.hasMessage()) {
                 String message = update.getMessage().getText();

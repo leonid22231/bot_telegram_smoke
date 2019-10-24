@@ -53,7 +53,7 @@ public class Bot extends TelegramLongPollingBot {
                 List<User> newUsers = update.getMessage().getNewChatMembers();
                 for(User newUser : newUsers){
                     bd.AddUser(newUser.getUserName().equals("null") ? newUser.getFirstName()
-                            : "@" + newUser.getUserName() + " " + update.getMessage().getContact().getLastName(), update.getMessage().getContact().getUserID());
+                            : "@" + newUser.getUserName() + " " + update.getMessage().getContact().getLastName(), newUser.getId());
                 }
 
                 System.out.println("User " + update.getMessage().getContact().getFirstName() +" is create");

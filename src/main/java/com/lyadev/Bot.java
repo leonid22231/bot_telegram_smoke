@@ -38,6 +38,7 @@ public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
        boolean user = false;
+       System.out.println(update.getMessage().getFrom().getFirstName());
         try {
             bd.CreateDB();
             if(!bd.getUsers().isEmpty()) {

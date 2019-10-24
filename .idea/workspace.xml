@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74ebd32f-18be-4953-9bd2-8255b77263d3" name="Default Changelist" comment="Button">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyadev/BD/bd.java" afterDir="false" />
+    <list default="true" id="74ebd32f-18be-4953-9bd2-8255b77263d3" name="Default Changelist" comment="Create DataBase">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyadev/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyadev/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lyadev/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyadev/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lyadev/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyadev/Bot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyadev/BD/bd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyadev/BD/bd.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +114,7 @@
       <updated>1571850627830</updated>
       <workItem from="1571850630367" duration="282000" />
       <workItem from="1571851459558" duration="22528000" />
-      <workItem from="1571880111879" duration="3263000" />
+      <workItem from="1571880111879" duration="3783000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit">
       <created>1571856703170</created>
@@ -386,7 +382,28 @@
       <option name="project" value="LOCAL" />
       <updated>1571880328902</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Create DataBase">
+      <created>1571925420870</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1571925420870</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Create DataBase">
+      <created>1571925511960</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1571925511960</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Create DataBase">
+      <created>1571925575992</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1571925575992</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,7 +428,8 @@
     <MESSAGE value="Test commit" />
     <MESSAGE value="/Start command add" />
     <MESSAGE value="Button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Button" />
+    <MESSAGE value="Create DataBase" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create DataBase" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

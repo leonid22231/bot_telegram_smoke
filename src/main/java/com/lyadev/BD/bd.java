@@ -88,6 +88,7 @@ public static ArrayList<String> getUsers() throws ClassNotFoundException, SQLExc
     while(resSet.next()){
         users.add(resSet.getString("USERNAME"));
     }
+    System.out.println(users.get(0));
     return users;
 }
     // --------Закрытие--------

@@ -38,11 +38,12 @@ public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
        boolean user = false;
-       System.out.println();
+       System.out.println(update.getMessage().getFrom().getFirstName());
         try {
             bd.CreateDB();
             if(!bd.getUsers().isEmpty()) {
                 bd.AddUser(update.getMessage().getFrom().getFirstName()+" "+ update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
+
             }else {
                 for(int i = 0 ; i<bd.getUsers().size();i++){
                     if(update.getMessage().getContact().getUserID() == bd.getUsers().get(i)){

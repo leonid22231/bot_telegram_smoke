@@ -1,5 +1,7 @@
 package com.lyadev.BD;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -9,11 +11,17 @@ public class bd {
     public static ResultSet resSet;
 
     // --------ПОДКЛЮЧЕНИЕ К БАЗЕ ДАННЫХ--------
-    public static void Conn() throws ClassNotFoundException, SQLException
+    public static void Conn() throws URISyntaxException, ClassNotFoundException, SQLException
     {
         conn = null;
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection("mysql://x7vsa0phsgb86kex:vrclco49rjal3i1p@pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/r1zec69zx4y0kmdv","x7vsa0phsgb86kex","vrclco49rjal3i1p");
+        URI jdbUri = new URI(System.getenv("mysql://x7vsa0phsgb86kex:vrclco49rjal3i1p@pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/r1zec69zx4y0kmdv"));
+
+        String username = jdbUri.getUserInfo().split(":")[0];
+        String password = jdbUri.getUserInfo().split(":")[1];
+        String port = String.valueOf(jdbUri.getPort());
+        String jdbUrl = "jdbc:mysql://" + jdbUri.getHost() + ":" + port + jdbUri.getPath();
+        conn = DriverManager.getConnection(jdbUrl,username, password);
 
         System.out.println("База Подключена!");
     }

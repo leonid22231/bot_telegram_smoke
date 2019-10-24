@@ -13,7 +13,7 @@ public class bd {
     {
         conn = null;
         Class.forName("org.sqlite.JDBC");
-        conn = DriverManager.getConnection("mysql://hagsw53h4sg96g29:i45pyqig29azebu6@jlg7sfncbhyvga14.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/e4ph0j7vg2k8m1gt");
+        conn = DriverManager.getConnection("mysql://x7vsa0phsgb86kex:vrclco49rjal3i1p@pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/r1zec69zx4y0kmdv");
 
         System.out.println("База Подключена!");
     }

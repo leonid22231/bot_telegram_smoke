@@ -38,36 +38,15 @@ public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
        boolean user = false;
-       System.out.println(update.getMessage().getFrom().getFirstName());
         try {
-            bd.CreateDB();
-            if(!bd.getUsers().isEmpty()) {
-                if(update.getMessage().getFrom().getLastName()!=null) {
-                    bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
-                }else{
-                    bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getChatId());
-                }
-
-            }else {
-                for(int i = 0 ; i<bd.getUsers().size();i++){
-                    if(update.getMessage().getFrom().getFirstName() == bd.getUsers().get(i)){
-                       user = true;
-                    }
-                }
-            }
-            if(!user){
-                if(update.getMessage().getFrom().getLastName()!=null) {
-                    bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
-                }else{
-                    bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getChatId());
-                }
-                System.out.println("User " + update.getMessage().getFrom().getFirstName() +" is create");
-            }else {
-                System.out.println("User " + update.getMessage().getFrom().getFirstName() + "существуе");
-            }
-        } catch (SQLException | ClassNotFoundException e) {
+            System.out.println(bd.getUsers().size()+"       "+bd.getUsers().isEmpty());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println(update.getMessage().getFrom().getFirstName());
+
         if(run) {
             int l = 0;
 
@@ -93,8 +72,37 @@ public class Bot extends TelegramLongPollingBot {
 
 
                 if (message.equals("/start")) {
+                    try {
+                        bd.CreateDB();
+                        if(!bd.getUsers().isEmpty()) {
+                            if(update.getMessage().getFrom().getLastName()!=null) {
+                                bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
+                            }else{
+                                bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getChatId());
+                            }
+
+                        }else {
+                            for(int i = 0 ; i<bd.getUsers().size();i++){
+                                if(update.getMessage().getFrom().getFirstName() == bd.getUsers().get(i)){
+                                    user = true;
+                                }
+                            }
+                        }
+                        if(!user){
+                            if(update.getMessage().getFrom().getLastName()!=null) {
+                                bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
+                            }else{
+                                bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getChatId());
+                            }
+                            System.out.println("User " + update.getMessage().getFrom().getFirstName() +" is create");
+                        }else {
+                            System.out.println("User " + update.getMessage().getFrom().getFirstName() + "существуе");
+                        }
+                    } catch (SQLException | ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     sendMsg(idchat, "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
-                    setInline(idchat, "ъьъ");
+
                 }
                 if (message.equals("Поддержать бота")) {
                     sendMsg(idchat, "Карта Сбербанк : 2202-2010-0225-4700");

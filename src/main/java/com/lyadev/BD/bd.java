@@ -54,7 +54,7 @@ public class bd {
         try {
             insertTableSQL = "INSERT INTO USERS"
                     + "(USER_LOCAL_ID,USERNAME, ID, STATE, ADMIN) " + "VALUES"
-                    + "'('"+ getUsers().size()+","+name+","+id+","+"'Start'"+","+"'FALCE')";
+                    + "("+ getUsers().size()+"," + "'"+name+ "'"+","+id+","+"'Start'"+","+"'FALCE')";
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

@@ -15,7 +15,7 @@ public class bd {
     {
         conn = null;
         Class.forName("com.mysql.cj.jdbc.Driver");
-        URI jdbUri = new URI(System.getenv("pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com"));
+        URI jdbUri = new URI(System.getenv("mysql://x7vsa0phsgb86kex:vrclco49rjal3i1p@pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/r1zec69zx4y0kmdv"));
 
         String username = jdbUri.getUserInfo().split(":")[0];
         String password = jdbUri.getUserInfo().split(":")[1];

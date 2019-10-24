@@ -78,10 +78,10 @@ public class bd {
         System.out.println("Таблица выведена");
     }
 public static ArrayList<Integer> getUsers() throws ClassNotFoundException, SQLException{
-    resSet = statmt.executeQuery("SELECT * FROM users");
+    resSet = statmt.executeQuery("SELECT * FROM USERS");
     ArrayList<Integer> users = new ArrayList<>();
     while(resSet.next()){
-        users.add(resSet.getInt("user_id"));
+        users.add(resSet.getInt("ID"));
     }
     return users;
 }

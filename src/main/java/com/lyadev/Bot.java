@@ -38,11 +38,11 @@ public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
        boolean user = false;
-       System.out.println(update.getMessage().getFrom().getFirstName());
+       System.out.println();
         try {
             bd.CreateDB();
             if(!bd.getUsers().isEmpty()) {
-                bd.AddUser(update.getMessage().getContact().getFirstName() + " " + update.getMessage().getContact().getLastName(), update.getMessage().getContact().getUserID());
+                bd.AddUser(update.getMessage().getFrom().getFirstName()+" "+ update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
             }else {
                 for(int i = 0 ; i<bd.getUsers().size();i++){
                     if(update.getMessage().getContact().getUserID() == bd.getUsers().get(i)){
@@ -51,15 +51,11 @@ public class Bot extends TelegramLongPollingBot {
                 }
             }
             if(!user){
-                List<User> newUsers = update.getMessage().getNewChatMembers();
-                for(User newUser : newUsers){
-                    bd.AddUser(newUser.getUserName().equals("null") ? newUser.getFirstName()
-                            : "@" + newUser.getUserName() + " " + update.getMessage().getContact().getLastName(), newUser.getId());
-                }
+                    bd.AddUser(update.getMessage().getFrom().getFirstName()+" "+ update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
 
-                System.out.println("User " + update.getMessage().getContact().getFirstName() +" is create");
+                System.out.println("User " + update.getMessage().getFrom().getFirstName() +" is create");
             }else {
-                System.out.println("User " + update.getMessage().getContact().getFirstName() + "существуе");
+                System.out.println("User " + update.getMessage().getFrom().getFirstName() + "существуе");
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

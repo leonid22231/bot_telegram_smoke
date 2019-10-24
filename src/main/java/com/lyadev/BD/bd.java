@@ -48,7 +48,7 @@ public class bd {
     }
 
     // --------Заполнение таблицы--------
-    public static void AddUser(String name , int id) throws SQLException
+    public static void AddUser(String name , Long id) throws SQLException
     {
         String insertTableSQL = "INSERT INTO USERS"
                 + "(USERNAME, ID, STATE, ADMIN) " + "VALUES"

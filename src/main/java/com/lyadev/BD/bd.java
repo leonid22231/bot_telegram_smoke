@@ -13,7 +13,7 @@ public class bd {
     {
         conn = null;
         Class.forName("org.sqlite.JDBC");
-        conn = DriverManager.getConnection("jdbc:sqlite:TEST1.s3db");
+        conn = DriverManager.getConnection("mysql://hagsw53h4sg96g29:i45pyqig29azebu6@jlg7sfncbhyvga14.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/e4ph0j7vg2k8m1gt");
 
         System.out.println("База Подключена!");
     }

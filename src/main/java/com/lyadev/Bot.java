@@ -63,7 +63,7 @@ public class Bot extends TelegramLongPollingBot {
                 String message = update.getMessage().getText();
                 String idchat = update.getMessage().getChatId().toString();
                 sendMsg(idchat,"Иди на хуй");
-                System.out.println(String.valueOf(update.getMessage().getContact().getFirstName())+": "+message);
+                System.out.println(": "+message);
                 if (message.equals("Dev")) {
                     key = false;
                     sendMsg(idchat, "Enter Pass:");

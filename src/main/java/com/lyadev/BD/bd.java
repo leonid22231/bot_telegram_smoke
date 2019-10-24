@@ -52,7 +52,7 @@ public class bd {
     {
         String insertTableSQL = "INSERT INTO USERS"
                 + "(USERNAME, ID, STATE, ADMIN) " + "VALUES"
-                + "("+name+","+id+","+"'Start'"+","+"'FALCE')";
+                + "'('"+name+","+id+","+"'Start'"+","+"'FALCE')";
 
         statmt.execute(insertTableSQL);
 

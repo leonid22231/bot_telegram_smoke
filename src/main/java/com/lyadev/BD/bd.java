@@ -85,6 +85,7 @@ public class bd {
 public static ArrayList<String> getUsers() throws ClassNotFoundException, SQLException{
     resSet = statmt.executeQuery("SELECT * FROM USERS");
     ArrayList<String> users = new ArrayList<>();
+    System.out.println("LOG "+ resSet);
     while(resSet.next()){
         users.add(resSet.getString("USERNAME"));
     }

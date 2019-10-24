@@ -30,7 +30,7 @@ public class bd {
     public static void CreateDB() throws ClassNotFoundException, SQLException
     {
         statmt = conn.createStatement();
-        statmt.execute("CREATE TABLE if not exists 'r1zec69zx4y0kmdv' ('id' INTEGER PRIMARY KEY AUTOINCREMENT, 'name' text, 'user_id' INT, 'state' text);");
+        statmt.execute("CREATE TABLE if not exists 'users' ('id' INTEGER PRIMARY KEY AUTOINCREMENT, 'name' text, 'user_id' INT, 'state' text);");
 
         System.out.println("Таблица создана или уже существует.");
     }
@@ -38,7 +38,7 @@ public class bd {
     // --------Заполнение таблицы--------
     public static void AddUser(String name , int id) throws SQLException
     {
-        statmt.execute("INSERT INTO 'r1zec69zx4y0kmdv' ('name', 'user_id', 'state') VALUES (name, id, 'start'); ");
+        statmt.execute("INSERT INTO 'users' ('name', 'user_id', 'state') VALUES (name, id, 'start'); ");
 
         System.out.println("User"+ name + " added");
     }

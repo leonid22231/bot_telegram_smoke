@@ -8,6 +8,7 @@ import org.telegram.telegrambots.api.methods.AnswerCallbackQuery;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
+import org.telegram.telegrambots.api.objects.User;
 import org.telegram.telegrambots.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.InlineKeyboardButton;
@@ -49,7 +50,12 @@ public class Bot extends TelegramLongPollingBot {
                 }
             }
             if(!user){
-                bd.AddUser(update.getMessage().getContact().getFirstName() + " " + update.getMessage().getContact().getLastName(), update.getMessage().getContact().getUserID());
+                List<User> newUsers = update.getMessage().getNewChatMembers();
+                for(User newUser : newUsers){
+                    bd.AddUser(newUser.getUserName().equals("null") ? newUser.getFirstName()
+                            : "@" + newUser.getUserName() + " " + update.getMessage().getContact().getLastName(), update.getMessage().getContact().getUserID());
+                }
+
                 System.out.println("User " + update.getMessage().getContact().getFirstName() +" is create");
             }else {
                 System.out.println("User " + update.getMessage().getContact().getFirstName() + "существуе");

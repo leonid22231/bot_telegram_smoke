@@ -27,13 +27,22 @@ import java.util.logging.Level;
 import static org.telegram.telegrambots.logging.BotLogger.log;
 
 public class Bot extends TelegramLongPollingBot {
+    boolean key = true;
     @Override
     public void onUpdateReceived(Update update) {
         if(update.hasMessage()) {
             String message = update.getMessage().getText();
             String idchat = update.getMessage().getChatId().toString();
             if (message.equals("Dev")) {
+                key = false;
                 sendMsg(idchat, "Enter Pass:");
+                while (true){
+                    if(message=="admin"){
+                        sendMsg(idchat,"Yes");
+                    }else {
+                        break ;
+                    }
+                }
             }
 
             if (message.equals("/start")) {
@@ -60,7 +69,7 @@ public class Bot extends TelegramLongPollingBot {
         }else if(update.hasCallbackQuery()){
             String message = update.getCallbackQuery().getData();
             System.out.println(message);
-            if (message.toString()=="test") {
+            if (message.equals("Text")) {
 
                 System.out.println("KEKEKEKKEKE");
             }
@@ -73,7 +82,9 @@ public class Bot extends TelegramLongPollingBot {
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId);
         sendMessage.setText(s);
-        setButtons(sendMessage);
+        if(key) {
+            setButtons(sendMessage);
+        }
         try {
            sendMessage(sendMessage);
         } catch (TelegramApiException e) {

@@ -10,6 +10,7 @@ import org.telegram.telegrambots.generics.Webhook;
 import org.telegram.telegrambots.generics.WebhookBot;
 
 
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -21,8 +22,7 @@ import java.util.List;
 public class App
 {
 
-    public static void main( String[] args ) throws SQLException, ClassNotFoundException
-    {
+    public static void main( String[] args ) throws SQLException, ClassNotFoundException, URISyntaxException {
         System.out.println("Starting...");
         bd.Conn();
 

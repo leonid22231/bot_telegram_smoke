@@ -332,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571876034696</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Button">
+      <created>1571876169391</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1571876169391</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +374,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java</url>
-          <line>69</line>
+          <line>70</line>
           <properties class="com.lyadev.Bot" method="sendMsg">
             <option name="EMULATED" value="true" />
           </properties>

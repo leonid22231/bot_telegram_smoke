@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74ebd32f-18be-4953-9bd2-8255b77263d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyadev/Dev_Command.java" afterDir="false" />
+    <list default="true" id="74ebd32f-18be-4953-9bd2-8255b77263d3" name="Default Changelist" comment="Button">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lyadev/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyadev/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lyadev/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyadev/Bot.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -346,7 +347,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java</url>
-          <line>68</line>
+          <line>69</line>
           <properties class="com.lyadev.Bot" method="sendMsg">
             <option name="EMULATED" value="true" />
           </properties>

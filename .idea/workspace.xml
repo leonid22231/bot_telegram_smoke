@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74ebd32f-18be-4953-9bd2-8255b77263d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lyadev/BD/bd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyadev/BD/bd.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,7 +113,7 @@
       <updated>1571850627830</updated>
       <workItem from="1571850630367" duration="282000" />
       <workItem from="1571851459558" duration="22528000" />
-      <workItem from="1571880111879" duration="5013000" />
+      <workItem from="1571880111879" duration="5285000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit">
       <created>1571856703170</created>
@@ -422,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571926755470</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Create DataBase">
+      <created>1571927070265</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1571927070265</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

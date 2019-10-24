@@ -12,7 +12,7 @@ public class bd {
     public static void Conn() throws ClassNotFoundException, SQLException
     {
         conn = null;
-        Class.forName("org.sqlite.JDBC");
+        Class.forName("com.mysql.jdbc.Driver");
         conn = DriverManager.getConnection("mysql://x7vsa0phsgb86kex:vrclco49rjal3i1p@pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/r1zec69zx4y0kmdv");
 
         System.out.println("База Подключена!");
@@ -22,7 +22,7 @@ public class bd {
     public static void CreateDB() throws ClassNotFoundException, SQLException
     {
         statmt = conn.createStatement();
-        statmt.execute("CREATE TABLE if not exists 'users' ('id' INTEGER PRIMARY KEY AUTOINCREMENT, 'name' text, 'user_id' INT, 'state' text);");
+        statmt.execute("CREATE TABLE if not exists 'r1zec69zx4y0kmdv' ('id' INTEGER PRIMARY KEY AUTOINCREMENT, 'name' text, 'user_id' INT, 'state' text);");
 
         System.out.println("Таблица создана или уже существует.");
     }
@@ -30,7 +30,7 @@ public class bd {
     // --------Заполнение таблицы--------
     public static void AddUser(String name , int id) throws SQLException
     {
-        statmt.execute("INSERT INTO 'users' ('name', 'user_id', 'state') VALUES (name, id, 'start'); ");
+        statmt.execute("INSERT INTO 'r1zec69zx4y0kmdv' ('name', 'user_id', 'state') VALUES (name, id, 'start'); ");
 
         System.out.println("User"+ name + " added");
     }

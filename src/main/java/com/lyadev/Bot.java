@@ -59,7 +59,7 @@ public class Bot extends TelegramLongPollingBot {
             }
         }else if(update.hasCallbackQuery()){
             String message = update.getCallbackQuery().getData();
-            if (message=="17") {
+            if (message=="test") {
 
                 System.out.println("KEKEKEKKEKE");
             }

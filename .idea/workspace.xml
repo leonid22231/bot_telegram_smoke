@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74ebd32f-18be-4953-9bd2-8255b77263d3" name="Default Changelist" comment="Button">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lyadev/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyadev/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lyadev/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyadev/Bot.class" afterDir="false" />
@@ -326,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571875921432</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Button">
+      <created>1571876034696</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1571876034696</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

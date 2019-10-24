@@ -3,6 +3,7 @@ package com.lyadev;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.telegram.telegrambots.api.methods.AnswerCallbackQuery;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
@@ -28,31 +29,40 @@ import static org.telegram.telegrambots.logging.BotLogger.log;
 public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
-        String message = update.getMessage().getText();
-        if(message.equals("17")){
-            System.out.println("KEKEKEKKEKE");
+        if(update.hasMessage()) {
+            String message = update.getMessage().getText();
+            String idchat = update.getMessage().getChatId().toString();
+            if (message.equals("Dev")) {
+                sendMsg(idchat, "Enter Pass:");
+            }
+
+            if (message.equals("/start")) {
+                sendMsg(idchat, "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
+                setInline(idchat, "ъьъ");
+            }
+            if (message.equals("Поддержать бота")) {
+                sendMsg(idchat, "Карта Сбербанк : 2202-2010-0225-4700");
+            }
+            if (message.equals("Сигареты")) {
+                String url = "https://www.tabacum.ru/info/cigarette";
+                Document doc = null;
+                try {
+                    doc = Jsoup.connect(url).get();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Elements listbrand = doc.select("div.brand-selector");
+                String[] a = listbrand.text().split(" ");
+                for (int i = 0; i < a.length; i++) {
+                    sendMsg(idchat, a[i]);
+                }
+            }
+        }else if(update.hasCallbackQuery()){
+            String message = update.getCallbackQuery().getData();
+            if (message.equals("17")) {
+                System.out.println("KEKEKEKKEKE");
+            }
         }
-       if(message.equals("/start")){
-           sendMsg(update.getMessage().getChatId().toString(), "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
-       setInline(update.getMessage().getChatId().toString(),"ъьъ");
-       }
-       if(message.equals("Поддержать бота")){
-sendMsg(update.getMessage().getChatId().toString(),"Карта Сбербанк : 2202-2010-0225-4700");
-       }
-       if(message.equals("Сигареты")){
-           String url = "https://www.tabacum.ru/info/cigarette";
-           Document doc = null;
-           try {
-               doc = Jsoup.connect(url).get();
-           } catch (IOException e) {
-               e.printStackTrace();
-           }
-           Elements listbrand = doc.select("div.brand-selector");
-           String[] a = listbrand.text().split(" ");
-           for (int i = 0 ; i < a.length ; i++){
-               sendMsg(update.getMessage().getChatId().toString(),a[i]);
-           }
-       }
     }
 
 
@@ -126,11 +136,25 @@ sendMessage.setText(s);
         KeyboardRow keyboardRowthre = new KeyboardRow();
         keyboardRowthre.add(new KeyboardButton("Поддержать бота"));
         // Добавляем все строчки клавиатуры в список
+        KeyboardRow dev_button = new KeyboardRow();
+        dev_button.add(new KeyboardButton("Dev"));
         keyboard.add(keyboardFirstRow);
         keyboard.add(keyboardSecondRow);
         keyboard.add(keyboardRowthree);
         keyboard.add(keyboardRowthre);
+        keyboard.add(dev_button);
         // и устанваливаем этот список нашей клавиатуре
         replyKeyboardMarkup.setKeyboard(keyboard);
+    }
+    public synchronized void answerCallbackQuery(String callbackId, String message) {
+        AnswerCallbackQuery answer = new AnswerCallbackQuery();
+        answer.setCallbackQueryId(callbackId);
+        answer.setText(message);
+        answer.setShowAlert(true);
+        try {
+            answerCallbackQuery(answer);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
     }
 }

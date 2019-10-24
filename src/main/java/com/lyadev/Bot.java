@@ -36,6 +36,7 @@ public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
        boolean user = false;
+
       // sendMsg(update.getMessage().getChatId().toString(),update.getMessage().getContact().getPhoneNumber().);
 //        try {
 //            bd.CreateDB();
@@ -61,6 +62,8 @@ public class Bot extends TelegramLongPollingBot {
             if (update.hasMessage()) {
                 String message = update.getMessage().getText();
                 String idchat = update.getMessage().getChatId().toString();
+                sendMsg(idchat,"Иди на хуй");
+                System.out.println(update.getMessage().getContact().getFirstName()+": "+message);
                 if (message.equals("Dev")) {
                     key = false;
                     sendMsg(idchat, "Enter Pass:");

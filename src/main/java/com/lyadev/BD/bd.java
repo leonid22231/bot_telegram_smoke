@@ -45,7 +45,7 @@ public class bd {
     // --------Заполнение таблицы--------
     public static void AddUser(String name , int id) throws SQLException
     {
-        String insertTableSQL = "INSERT INTO DBUSER"
+        String insertTableSQL = "INSERT INTO USERS"
                 + "(USERNAME, ID, STATE, ADMIN) " + "VALUES"
                 + "("+name+","+" '"+id+",'Start', 'FALSE'" + ")";
 

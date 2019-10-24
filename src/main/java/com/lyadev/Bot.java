@@ -32,7 +32,7 @@ import static org.telegram.telegrambots.logging.BotLogger.log;
 public class Bot extends TelegramLongPollingBot {
     boolean key = true;
     //boolean admin = false;
-    boolean run = false;
+    boolean run = true;
     @Override
     public void onUpdateReceived(Update update) {
        boolean user = false;

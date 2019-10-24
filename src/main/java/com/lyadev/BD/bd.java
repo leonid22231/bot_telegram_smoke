@@ -37,7 +37,12 @@ public class bd {
     public static void CreateDB() throws ClassNotFoundException, SQLException
     {
         statmt = conn.createStatement();
-        statmt.execute(createTableSQL);
+        try {
+            statmt.execute(createTableSQL);
+        }catch (SQLException e){
+            System.out.println("Уже существует");
+        }
+
 
         System.out.println("Таблица создана или уже существует.");
     }

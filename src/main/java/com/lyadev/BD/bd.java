@@ -9,7 +9,14 @@ public class bd {
     public static Connection conn;
     public static Statement statmt;
     public static ResultSet resSet;
-
+    static String createTableSQL = "CREATE TABLE USERS("
+            + "USER_LOCAL_ID INT NOT NULL, "
+            + "USERNAME TEXT NOT NULL, "
+            + "ID INT NOT NULL, "
+            + "STATE TEXT NOT NULL, "
+            + "ADMIN VARCHAR(5) NOT NULL, "
+            + "PRIMARY KEY (USER_LOCAL_ID) "
+            + ")";
     // --------ПОДКЛЮЧЕНИЕ К БАЗЕ ДАННЫХ--------
     public static void Conn() throws URISyntaxException, ClassNotFoundException, SQLException
     {
@@ -30,7 +37,7 @@ public class bd {
     public static void CreateDB() throws ClassNotFoundException, SQLException
     {
         statmt = conn.createStatement();
-        statmt.execute("CREATE TABLE if not exists 'users' ('id' INTEGER PRIMARY KEY AUTOINCREMENT, 'name' text, 'user_id' INT, 'state' text);");
+        statmt.execute(createTableSQL);
 
         System.out.println("Таблица создана или уже существует.");
     }
@@ -78,4 +85,6 @@ public static ArrayList<Integer> getUsers() throws ClassNotFoundException, SQLEx
 
         System.out.println("Соединения закрыты");
     }
+    ////STRING
+
 }

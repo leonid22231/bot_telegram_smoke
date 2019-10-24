@@ -26,10 +26,6 @@ public class App
         System.out.println("Starting...");
         bd.Conn();
 
-//        bd.CloseDB();
-//        System.getProperties().put( "proxySet", "true" );
-//        System.getProperties().put( "socksProxyHost", "157.245.217.102" );
-//        System.getProperties().put( "socksProxyPort", "80" );
         ApiContextInitializer.init();
         TelegramBotsApi botapi = new TelegramBotsApi();
         try {

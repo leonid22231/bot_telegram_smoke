@@ -38,27 +38,26 @@ public class Bot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
        boolean user = false;
 
-      // sendMsg(update.getMessage().getChatId().toString(),update.getMessage().getContact().getPhoneNumber().);
-//        try {
-//            bd.CreateDB();
-//            if(!bd.getUsers().isEmpty()) {
-//                bd.AddUser(update.getMessage().getContact().getFirstName() + " " + update.getMessage().getContact().getLastName(), update.getMessage().getContact().getUserID());
-//            }else {
-//                for(int i = 0 ; i<bd.getUsers().size();i++){
-//                    if(update.getMessage().getContact().getUserID() == bd.getUsers().get(i)){
-//                       user = true;
-//                    }
-//                }
-//            }
-//            if(!user){
-//                bd.AddUser(update.getMessage().getContact().getFirstName() + " " + update.getMessage().getContact().getLastName(), update.getMessage().getContact().getUserID());
-//                System.out.println("User " + update.getMessage().getContact().getFirstName() +" is create");
-//            }else {
-//                System.out.println("User " + update.getMessage().getContact().getFirstName() + "существуе");
-//            }
-//        } catch (SQLException | ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            bd.CreateDB();
+            if(!bd.getUsers().isEmpty()) {
+                bd.AddUser(update.getMessage().getContact().getFirstName() + " " + update.getMessage().getContact().getLastName(), update.getMessage().getContact().getUserID());
+            }else {
+                for(int i = 0 ; i<bd.getUsers().size();i++){
+                    if(update.getMessage().getContact().getUserID() == bd.getUsers().get(i)){
+                       user = true;
+                    }
+                }
+            }
+            if(!user){
+                bd.AddUser(update.getMessage().getContact().getFirstName() + " " + update.getMessage().getContact().getLastName(), update.getMessage().getContact().getUserID());
+                System.out.println("User " + update.getMessage().getContact().getFirstName() +" is create");
+            }else {
+                System.out.println("User " + update.getMessage().getContact().getFirstName() + "существуе");
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         if(run) {
             int l = 0;
 

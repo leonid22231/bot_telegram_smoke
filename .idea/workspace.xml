@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74ebd32f-18be-4953-9bd2-8255b77263d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -113,21 +114,7 @@
       <workItem from="1571850630367" duration="282000" />
       <workItem from="1571851459558" duration="22528000" />
       <workItem from="1571880111879" duration="8743000" />
-      <workItem from="1571945994184" duration="1147000" />
-    </task>
-    <task id="LOCAL-00012" summary="Test commit">
-      <created>1571864963419</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1571864963419</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Test commit">
-      <created>1571865271206</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1571865271206</updated>
+      <workItem from="1571945994184" duration="1792000" />
     </task>
     <task id="LOCAL-00014" summary="/Start command add">
       <created>1571865712620</created>
@@ -458,7 +445,21 @@
       <option name="project" value="LOCAL" />
       <updated>1571946988868</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Create DataBase">
+      <created>1571947153125</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1571947153125</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Create DataBase">
+      <created>1571947237386</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1571947237386</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +492,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/lyadev/Bot.java</url>
-          <line>115</line>
+          <line>119</line>
           <properties class="com.lyadev.Bot" method="sendMsg">
             <option name="EMULATED" value="true" />
           </properties>

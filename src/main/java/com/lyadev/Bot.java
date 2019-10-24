@@ -59,22 +59,26 @@ public class Bot extends TelegramLongPollingBot {
 //            e.printStackTrace();
 //        }
         if(run) {
+            int l = 0;
+            String admin = null;
             if (update.hasMessage()) {
                 String message = update.getMessage().getText();
                 String idchat = update.getMessage().getChatId().toString();
-                sendMsg(idchat,"Иди на хуй");
-                System.out.println(": "+message);
+                sendMsg(idchat, "Иди на хуй");
+                System.out.println(": " + message);
+                if (admin != null){
+                    sendMsg(admin, message);
+            }
                 if (message.equals("Dev")) {
                     key = false;
                     sendMsg(idchat, "Enter Pass:");
-                    while (true) {
-                        if (message.equals("admin")) {
-                            sendMsg(idchat, "Yes");
-                        } else {
-                            break;
-                        }
+
+                   if(l==0){
+                       admin = idchat;
+                   }
+                    l = 1;
                     }
-                }
+
 
                 if (message.equals("/start")) {
                     sendMsg(idchat, "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");

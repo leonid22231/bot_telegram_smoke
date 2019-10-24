@@ -45,7 +45,11 @@ public class bd {
     // --------Заполнение таблицы--------
     public static void AddUser(String name , int id) throws SQLException
     {
-        statmt.execute("INSERT INTO 'users' ('name', 'user_id', 'state') VALUES (name, id, 'start'); ");
+        String insertTableSQL = "INSERT INTO DBUSER"
+                + "(USERNAME, ID, STATE, ADMIN) " + "VALUES"
+                + "("+name+","+" '"+id+",'Start', 'FALSE'" + ")";
+
+        statmt.execute(insertTableSQL);
 
         System.out.println("User"+ name + " added");
     }
@@ -86,5 +90,9 @@ public static ArrayList<Integer> getUsers() throws ClassNotFoundException, SQLEx
         System.out.println("Соединения закрыты");
     }
     ////STRING
+   public String addgenerate(){
+
+        return "";
+    }
 
 }

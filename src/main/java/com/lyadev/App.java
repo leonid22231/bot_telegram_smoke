@@ -25,7 +25,7 @@ public class App
     {
         System.out.println("Starting...");
         bd.Conn();
-        bd.CreateDB();
+
 //        bd.CloseDB();
 //        System.getProperties().put( "proxySet", "true" );
 //        System.getProperties().put( "socksProxyHost", "157.245.217.102" );

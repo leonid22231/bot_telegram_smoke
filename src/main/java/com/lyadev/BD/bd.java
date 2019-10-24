@@ -30,7 +30,7 @@ public class bd {
     // --------Заполнение таблицы--------
     public static void AddUser(String name , int id) throws SQLException
     {
-        statmt.execute("INSERT INTO 'users' ('name', 'user_id','state') VALUES (name, id, 'start'); ");
+        statmt.execute("INSERT INTO 'users' ('name', 'user_id', 'state') VALUES (name, id, 'start'); ");
 
         System.out.println("User"+ name + " added");
     }

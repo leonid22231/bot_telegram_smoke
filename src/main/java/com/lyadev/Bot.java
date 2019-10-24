@@ -21,6 +21,7 @@ import org.telegram.telegrambots.logging.BotLogger;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 
@@ -28,52 +29,60 @@ import static org.telegram.telegrambots.logging.BotLogger.log;
 
 public class Bot extends TelegramLongPollingBot {
     boolean key = true;
+    boolean admin = false;
+    boolean run = false;
     @Override
     public void onUpdateReceived(Update update) {
-        if(update.hasMessage()) {
-            String message = update.getMessage().getText();
-            String idchat = update.getMessage().getChatId().toString();
-            if (message.equals("Dev")) {
-                key = false;
-                sendMsg(idchat, "Enter Pass:");
-                while (true){
-                    if(message=="admin"){
-                        sendMsg(idchat,"Yes");
-                    }else {
-                        break ;
+        if(run) {
+            if (update.hasMessage()) {
+                String message = update.getMessage().getText();
+                String idchat = update.getMessage().getChatId().toString();
+                if (message.equals("Dev")) {
+                    key = false;
+                    sendMsg(idchat, "Enter Pass:");
+                    while (true) {
+                        if (message.equals("admin")) {
+                            sendMsg(idchat, "Yes");
+                        } else {
+                            break;
+                        }
                     }
                 }
-            }
 
-            if (message.equals("/start")) {
-                sendMsg(idchat, "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
-                setInline(idchat, "ъьъ");
-            }
-            if (message.equals("Поддержать бота")) {
-                sendMsg(idchat, "Карта Сбербанк : 2202-2010-0225-4700");
-            }
-            if (message.equals("Сигареты")) {
-                String url = "https://www.tabacum.ru/info/cigarette";
-                Document doc = null;
-                try {
-                    doc = Jsoup.connect(url).get();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                if (message.equals("/start")) {
+                    sendMsg(idchat, "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
+                    setInline(idchat, "ъьъ");
                 }
-                Elements listbrand = doc.select("div.brand-selector");
-                String[] a = listbrand.text().split(" ");
-                for (int i = 0; i < a.length; i++) {
-                    sendMsg(idchat, a[i]);
+                if (message.equals("Поддержать бота")) {
+                    sendMsg(idchat, "Карта Сбербанк : 2202-2010-0225-4700");
                 }
-            }
-        }else if(update.hasCallbackQuery()){
-            String message = update.getCallbackQuery().getData();
-            System.out.println(message);
-            if (message.equals("Text")) {
+                if (message.equals("Сигареты")) {
+                    String url = "https://www.tabacum.ru/info/cigarette";
+                    Document doc = null;
+                    try {
+                        doc = Jsoup.connect(url).get();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    Elements listbrand = doc.select("div.brand-selector");
+                    String[] a = listbrand.text().split(" ");
+                    for (int i = 0; i < a.length; i++) {
+                        sendMsg(idchat, a[i]);
+                    }
+                }
+            } else if (update.hasCallbackQuery()) {
+                String message = update.getCallbackQuery().getData();
+                System.out.println(message);
+                if (message.equals("Text")) {
 
-                System.out.println("KEKEKEKKEKE");
+                    System.out.println("KEKEKEKKEKE");
+                }
             }
-        }
+        }else{
+            String message = update.getMessage().getText();
+            String idchat = update.getMessage().getChatId().toString();
+            Date date = new Date();
+            sendMsg(idchat,"Bot is offline , Sorry "+ "Date : "+date.toString() );}
     }
 
 

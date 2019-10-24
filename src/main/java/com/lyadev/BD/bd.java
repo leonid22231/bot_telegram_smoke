@@ -53,8 +53,8 @@ public class bd {
         String insertTableSQL = null;
         try {
             insertTableSQL = "INSERT INTO USERS"
-                    + "(USERNAME, ID, STATE, ADMIN) " + "VALUES"
-                    + "("+ getUsers().size()+","+name+","+id+","+"'Start'"+","+"'FALCE')";
+                    + "(USER_LOCAL_ID,USERNAME, ID, STATE, ADMIN) " + "VALUES"
+                    + "'('"+ getUsers().size()+","+name+","+id+","+"'Start'"+","+"'FALCE')";
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -86,7 +86,7 @@ public static ArrayList<Integer> getUsers() throws ClassNotFoundException, SQLEx
     resSet = statmt.executeQuery("SELECT * FROM USERS");
     ArrayList<Integer> users = new ArrayList<>();
     while(resSet.next()){
-        users.add(resSet.getInt("ID"));
+        users.add(resSet.getInt("USER_LOCAL_ID"));
     }
     return users;
 }

@@ -50,9 +50,14 @@ public class bd {
     // --------Заполнение таблицы--------
     public static void AddUser(String name , Long id) throws SQLException
     {
-        String insertTableSQL = "INSERT INTO USERS"
-                + "(USERNAME, ID, STATE, ADMIN) " + "VALUES"
-                + "'('"+name+","+id+","+"'Start'"+","+"'FALCE')";
+        String insertTableSQL = null;
+        try {
+            insertTableSQL = "INSERT INTO USERS"
+                    + "(USERNAME, ID, STATE, ADMIN) " + "VALUES"
+                    + "("+ getUsers().size()+","+name+","+id+","+"'Start'"+","+"'FALCE')";
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         statmt.execute(insertTableSQL);
 

@@ -13,7 +13,7 @@ public class bd {
     {
         conn = null;
         Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("mysql://x7vsa0phsgb86kex:vrclco49rjal3i1p@pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/r1zec69zx4y0kmdv");
+        conn = DriverManager.getConnection("mysql://x7vsa0phsgb86kex:vrclco49rjal3i1p@pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/r1zec69zx4y0kmdv","x7vsa0phsgb86kex","vrclco49rjal3i1p");
 
         System.out.println("База Подключена!");
     }

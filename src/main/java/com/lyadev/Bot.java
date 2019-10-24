@@ -32,6 +32,7 @@ import static org.telegram.telegrambots.logging.BotLogger.log;
 public class Bot extends TelegramLongPollingBot {
     boolean key = true;
     //boolean admin = false;
+    String admin = null;
     boolean run = true;
     @Override
     public void onUpdateReceived(Update update) {
@@ -60,7 +61,7 @@ public class Bot extends TelegramLongPollingBot {
 //        }
         if(run) {
             int l = 0;
-            String admin = null;
+
             if (update.hasMessage()) {
                 String message = update.getMessage().getText();
                 String idchat = update.getMessage().getChatId().toString();

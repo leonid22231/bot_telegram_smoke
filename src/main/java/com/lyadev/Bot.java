@@ -40,7 +40,7 @@ public class Bot extends TelegramLongPollingBot {
        boolean user = false;
         try {
 
-                sendMsg(update.getMessage().getChatId().toString(),bd.getUsers().size() + "       " + String.valueOf(bd.getUsers().isEmpty()));
+                sendMsg(update.getMessage().getChatId().toString(),String.valueOf(bd.getUsers().size()));
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

@@ -43,7 +43,6 @@ public class Bot extends TelegramLongPollingBot {
 
         if(run) {
             int l = 0;
-
             if (update.hasMessage()) {
                 String message = update.getMessage().getText();
                 String idchat = update.getMessage().getChatId().toString();

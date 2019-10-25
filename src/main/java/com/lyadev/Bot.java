@@ -76,6 +76,8 @@ System.out.println("user = false");
                         }else {
                             for(int i = 0 ; i<bd.getUsers().size();i++){
                                 for(int k = 0 ; k < bd.getUsers().get(i).size(); k++){
+                                    System.out.println("I = "+i);
+                                    System.out.println("K = "+k);
                                     System.out.println(update.getMessage().getFrom().getFirstName() +"||"+ String.valueOf(bd.getUsers().get(i).get(k)));
                                 }
 

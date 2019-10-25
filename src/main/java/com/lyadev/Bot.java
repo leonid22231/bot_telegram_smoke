@@ -82,7 +82,11 @@ public class Bot extends TelegramLongPollingBot {
                                 String firstname = bd.getUsers().get(i).get(0);
                                 String secondname = bd.getUsers().get(i).get(1);
                                 String iduser = bd.getUsers().get(i).get(2);
-                                System.out.println("ID : > "+ idchat.equals(iduser)+"NAME 1 : > "+firstusername.equals(firstname)+"NAME 2 : > "+secondusername.equals(secondname));
+                                if(secondusername != null) {
+                                    System.out.println("ID : > " + idchat.equals(iduser) + "NAME 1 : > " + firstusername.equals(firstname) + "NAME 2 : > " + secondusername.equals(secondname));
+                                }else{
+                                    System.out.println("ID : > " + idchat.equals(iduser) + "NAME 1 : > " + firstusername.equals(firstname) + "NAME 2 : > " + null);
+                                }
                                 if(secondusername != null) {
                                     if ((firstusername.equals(firstname) == true && secondusername.equals(secondname) == true) | String.valueOf(idchat).equals(iduser)==true) {
                                         user = true;

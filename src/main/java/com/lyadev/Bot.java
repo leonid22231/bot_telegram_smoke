@@ -73,8 +73,10 @@ public class Bot extends TelegramLongPollingBot {
 
                 if (message.equals("/start")) {
                     try {
+                        bd.CloseDB();
+                        bd.CreateDB();
                         System.out.println(bd.getUsers().isEmpty());
-                        if(!bd.getUsers().isEmpty()) {
+                        if(bd.getUsers().isEmpty()==true) {
                             if(update.getMessage().getFrom().getLastName()!=null) {
                                 bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
                             }else{
@@ -88,7 +90,7 @@ public class Bot extends TelegramLongPollingBot {
                                 }
                             }
                         }
-                        if(!user){
+                        if(user==false){
                             if(update.getMessage().getFrom().getLastName()!=null) {
                                 bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
                             }else{

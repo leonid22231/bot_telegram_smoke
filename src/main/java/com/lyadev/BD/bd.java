@@ -175,12 +175,12 @@ public static void changename(int ID, String name){
             e.printStackTrace();
         }
     }
-    public static int getID(String telegram_id) throws SQLException {
-        int ID = 0;
-        resSet = statmt.executeQuery("SELECT USER_LOCAL_ID FROM USERS WHERE ID = "+Integer.valueOf(telegram_id));
+    public static int getID(int telegram_id) throws SQLException {
+        int Id = 0;
+        resSet = statmt.executeQuery("SELECT USER_LOCAL_ID FROM USERS WHERE ID = "+telegram_id);
         while(resSet.next()) {
-            ID = resSet.getInt("USER_LOCAL_ID");
+           Id = resSet.getInt("USER_LOCAL_ID");
         }
-        return ID;
+        return Id;
     }
 }

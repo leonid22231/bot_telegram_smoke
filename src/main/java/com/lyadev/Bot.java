@@ -57,7 +57,7 @@ public class Bot extends TelegramLongPollingBot {
                 if (message.equals("Dev")) {
                     key = false;
                     try {
-                        bd.changestate(bd.getID(idchat),9);
+                        bd.changestate(bd.getID(Integer.valueOf(idchat)),9);
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
@@ -153,7 +153,7 @@ System.out.println(data);
                     }
                     sendMsg(idchat, "Ну пиздец конечно " + new Date().toString());
                     try {
-                        bd.changestate(bd.getID(idchat),0);
+                        bd.changestate(bd.getID(Integer.valueOf(idchat)),0);
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
@@ -175,7 +175,7 @@ System.out.println(data);
                         sendMsg(idchat, a[i]);
                     }
                     try {
-                        bd.changestate(bd.getID(idchat),1);
+                        bd.changestate(bd.getID(Integer.valueOf(idchat)),1);
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }

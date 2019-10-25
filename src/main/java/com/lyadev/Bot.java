@@ -39,13 +39,6 @@ public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
        boolean user = false;
-        try {
-            bd.CreateDB();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
         System.out.println(update.getMessage().getFrom().getFirstName());
 
         if(run) {

@@ -100,17 +100,30 @@ System.out.println(data);
                                 }else{
                                     System.out.println("ID : > " + idchat.equals(iduser) + "NAME 1 : > " + firstusername.equals(firstname) + "NAME 2 : > " + null);
                                 }
-                                if(secondusername != null) {
-                                    if (((firstusername.equals(firstname) && secondusername.equals(secondname)) && String.valueOf(idchat).equals(iduser))==true) {
-                                        user = true;
-                                        System.out.println("User = true");
-                                    }else{
-                                        if ((firstusername.equals(firstname) && idchat.equals(iduser))==true){
-                                            user = true;
-                                            System.out.println("User = true");
-                                        }
+                                if(String.valueOf(idchat).equals(iduser)==true){
+                                    user = true;
+                                    if(secondusername.equals(secondname)){
+                                    }else {
+                                        System.out.println("Фамилия была изменена c "+ secondname+"на "+secondusername);
                                     }
+                                    if(firstusername.equals(firstname)){
+
+                                    }else {
+                                        System.out.println("Имя было изменено с"+ firstname+"на "+firstusername);
+                                    }
+                                    System.out.println("User : > "+firstname);
                                 }
+//                                if(secondusername != null) {
+//                                    if (((firstusername.equals(firstname) && secondusername.equals(secondname)) && String.valueOf(idchat).equals(iduser))==true) {
+//                                        user = true;
+//                                        System.out.println("User = true");
+//                                    }else{
+//                                        if ((firstusername.equals(firstname) && idchat.equals(iduser))==true){
+//                                            user = true;
+//                                            System.out.println("User = true");
+//                                        }
+//                                    }
+//                                }
                             }
                         }
                         bd.CloseDB();

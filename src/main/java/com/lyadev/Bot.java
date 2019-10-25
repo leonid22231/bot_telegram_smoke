@@ -85,7 +85,11 @@ public class Bot extends TelegramLongPollingBot {
                                 }
                             }
                         }
-                        if(user==false){
+                        bd.CloseDB();
+                        bd.Conn();
+                        bd.CreateDB();
+
+                        if(user==false || bd.getUsers().isEmpty()){
                             if(update.getMessage().getFrom().getLastName()!=null) {
                                 bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
                             }else{

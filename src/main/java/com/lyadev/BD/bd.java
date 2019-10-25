@@ -11,7 +11,8 @@ public class bd {
     public static ResultSet resSet;
     static String createTableSQL = "CREATE TABLE USERS("
             + "USER_LOCAL_ID INT NOT NULL, "
-            + "USERNAME TEXT NOT NULL, "
+            + "USERNAME_FIRSTNAME TEXT NOT NULL, "
+            + "USERNAME_SECONDNAME TEXT , "
             + "ID INT NOT NULL, "
             + "STATE TEXT NOT NULL, "
             + "ADMIN VARCHAR(5) NOT NULL, "
@@ -48,13 +49,13 @@ public class bd {
     }
 
     // --------Заполнение таблицы--------
-    public static void AddUser(String name , Long id) throws SQLException
+    public static void AddUser(String name ,String lastname, Long id) throws SQLException
     {
         String insertTableSQL = null;
         try {
             insertTableSQL = "INSERT INTO USERS"
-                    + "(USER_LOCAL_ID,USERNAME, ID, STATE, ADMIN) " + "VALUES"
-                    + "("+ getUsers().size()+"," + "'"+name+ "'"+","+id+","+"'Start'"+","+"'FALCE')";
+                    + "(USER_LOCAL_ID,USERNAME_FIRSTNAME, USERNAME_SECONDNAME, ID, STATE, ADMIN) " + "VALUES"
+                    + "("+ getUsers().size()+"," + "'"+name+ "'"+","+"'"+lastname+"'"+id+","+"'Start'"+","+"'FALCE')";
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -82,15 +83,21 @@ public class bd {
 
         System.out.println("Таблица выведена");
     }
-public static ArrayList<String> getUsers() throws ClassNotFoundException, SQLException{
+public static ArrayList<ArrayList<String>> getUsers() throws ClassNotFoundException, SQLException{
     resSet = statmt.executeQuery("SELECT * FROM USERS");
-    ArrayList<String> users = new ArrayList<>();
+    ArrayList<String> users_firstname = new ArrayList<>();
+    ArrayList<ArrayList<String>> users = new ArrayList<>();
+
+    users_firstname.clear();
     users.clear();
     System.out.println("LOG "+ resSet);
     while(resSet.next()){
-        users.add(resSet.getString("USERNAME"));
+        users_firstname.add(resSet.getString("USERNAME_FIRSTNAME"));
+        users_firstname.add(resSet.getString("USERNAME_SECONDNAME"));
+        users.add(users_firstname);
+        users_firstname.clear();
     }
-    System.out.println(users.isEmpty());
+
     return users;
 }
     // --------Закрытие--------

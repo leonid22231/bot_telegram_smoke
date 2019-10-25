@@ -73,19 +73,26 @@ public class Bot extends TelegramLongPollingBot {
                         System.out.println(bd.getUsers().size());
                         if(bd.getUsers().isEmpty()) {
                             if(update.getMessage().getFrom().getLastName()!=null) {
-                                bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
+                                bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
                             }else{
-                                bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getChatId());
+                                bd.AddUser(update.getMessage().getFrom().getFirstName(),null , update.getMessage().getChatId());
                             }
 
                         }else {
                             for(int i = 0 ; i<bd.getUsers().size();i++){
                                 System.out.println(update.getMessage().getFrom().getFirstName() +"||"+ String.valueOf(bd.getUsers().get(i)));
-                                String username = update.getMessage().getFrom().getFirstName();
-                                String name = bd.getUsers().get(i);
-                                if(username.equals(name)==true){
-
-                                    user = true;
+                                String firstusername = update.getMessage().getFrom().getFirstName();
+                                String secondusername = update.getMessage().getFrom().getLastName();
+                                String firstname = bd.getUsers().get(i).get(0);
+                                String secondname = bd.getUsers().get(i).get(1);
+                                if(secondusername != null) {
+                                    if (firstusername.equals(firstname) == true && secondusername.equals(secondname) == true) {
+                                        user = true;
+                                    }else{
+                                        if (firstusername.equals(firstname) == true){
+                                            user = true;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -95,9 +102,9 @@ public class Bot extends TelegramLongPollingBot {
 
                         if(user==false && !bd.getUsers().isEmpty()){
                             if(update.getMessage().getFrom().getLastName()!=null) {
-                                bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
+                                bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
                             }else{
-                                bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getChatId());
+                                bd.AddUser(update.getMessage().getFrom().getFirstName(),null , update.getMessage().getChatId());
                             }
                             System.out.println("User " + update.getMessage().getFrom().getFirstName() +" is create");
 

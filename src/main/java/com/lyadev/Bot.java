@@ -71,7 +71,7 @@ public class Bot extends TelegramLongPollingBot {
                         bd.Conn();
                         bd.CreateDB();
                         System.out.println(bd.getUsers().size());
-                        if(bd.getUsers().get(0).isEmpty()) {
+                        if(bd.getUsers().isEmpty()) {
                             if(update.getMessage().getFrom().getLastName()!=null) {
                                 bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
                             }else{

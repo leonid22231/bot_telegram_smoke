@@ -56,12 +56,13 @@ public class Bot extends TelegramLongPollingBot {
 //            }
                 if (message.equals("Dev")) {
                     key = false;
+                    try {
+                        bd.changestate(bd.getID(idchat),9);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                     sendMsg(idchat, "Enter Pass:");
 
-                   if(l==0){
-                       admin = idchat;
-                   }
-                    l = 1;
                     }
 
 
@@ -151,7 +152,11 @@ System.out.println(data);
                         e.printStackTrace();
                     }
                     sendMsg(idchat, "Ну пиздец конечно " + new Date().toString());
-
+                    try {
+                        bd.changestate(bd.getID(idchat),0);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
                 if (message.equals("Поддержать бота")) {
                     sendMsg(idchat, "Карта Сбербанк : 2202-2010-0225-4700");
@@ -168,6 +173,11 @@ System.out.println(data);
                     String[] a = listbrand.text().split(" ");
                     for (int i = 0; i < a.length; i++) {
                         sendMsg(idchat, a[i]);
+                    }
+                    try {
+                        bd.changestate(bd.getID(idchat),1);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
                     }
                 }
             } else if (update.hasCallbackQuery()) {

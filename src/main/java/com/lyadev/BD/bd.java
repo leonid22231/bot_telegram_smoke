@@ -1,5 +1,8 @@
 package com.lyadev.BD;
 
+import com.google.inject.internal.cglib.core.$ClassEmitter;
+import com.sun.org.apache.bcel.internal.generic.SWITCH;
+
 import java.net.*;
 import java.net.URISyntaxException;
 import java.sql.*;
@@ -139,5 +142,43 @@ public static void changename(int ID, String name){
             e.printStackTrace();
         }
 
+    }
+    public static void changestate(int ID,int state){
+        try {
+            switch (state) {
+                case 0 :
+                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "MENU" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    break;
+                case 1:
+                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "MENU_1" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    break;
+                case 2:
+                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "Menu_2" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    break;
+                case 3:
+                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "Menu_3" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    break;
+                case 4:
+                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "Menu_4" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    break;
+                case 5:
+                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "Menu_5" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    break;
+                case 9:
+                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "DEV_PASS" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    break;
+                default:
+                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "MENU" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    break;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public static int getID(String telegram_id) throws SQLException {
+        int ID = 0;
+        resSet = statmt.executeQuery("SELECT * FROM USERS WHERE ID="+telegram_id);
+        ID = resSet.getInt("USER_LOCAL_ID");
+        return ID;
     }
 }

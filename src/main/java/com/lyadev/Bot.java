@@ -38,7 +38,7 @@ public class Bot extends TelegramLongPollingBot {
     boolean run = true;
     @Override
     public void onUpdateReceived(Update update) {
-       boolean user = false;
+       boolean user = true;
         System.out.println(update.getMessage().getFrom().getFirstName());
 
         if(run) {

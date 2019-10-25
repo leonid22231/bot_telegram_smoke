@@ -87,8 +87,8 @@ public class bd {
 public static ArrayList<ArrayList<String>> getUsers() throws ClassNotFoundException, SQLException{
     resSet = statmt.executeQuery("SELECT * FROM USERS");
     ArrayList<ArrayList<String>> users = new ArrayList<>();
-
     users.clear();
+
     while(resSet.next()){
         ArrayList<String> users_firstname = new ArrayList<>();
         users_firstname.add(resSet.getString("USERNAME_FIRSTNAME"));
@@ -99,7 +99,8 @@ public static ArrayList<ArrayList<String>> getUsers() throws ClassNotFoundExcept
     }
 
     return users;
-}
+
+    }
     // --------Закрытие--------
     public static void CloseDB() throws ClassNotFoundException, SQLException
     {

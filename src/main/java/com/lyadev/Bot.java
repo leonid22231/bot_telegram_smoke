@@ -88,10 +88,10 @@ public class Bot extends TelegramLongPollingBot {
                                     System.out.println("ID : > " + idchat.equals(iduser) + "NAME 1 : > " + firstusername.equals(firstname) + "NAME 2 : > " + null);
                                 }
                                 if(secondusername != null) {
-                                    if ((firstusername.equals(firstname) == true && secondusername.equals(secondname) == true) | String.valueOf(idchat).equals(iduser)==true) {
+                                    if ((firstusername.equals(firstname) && secondusername.equals(secondname)) | String.valueOf(idchat).equals(iduser)) {
                                         user = true;
                                     }else{
-                                        if (firstusername.equals(firstname) == true | idchat.equals(iduser)==true){
+                                        if (firstusername.equals(firstname) | idchat.equals(iduser)){
                                             user = true;
                                         }
                                     }

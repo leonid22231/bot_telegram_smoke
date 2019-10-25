@@ -95,6 +95,7 @@ public static ArrayList<ArrayList<String>> getUsers() throws ClassNotFoundExcept
         users_firstname.add(resSet.getString("USERNAME_SECONDNAME"));
         users_firstname.add(String.valueOf(resSet.getInt("ID")));
         users.add(users_firstname);
+        users_firstname.clear();
     }
 
     return users;

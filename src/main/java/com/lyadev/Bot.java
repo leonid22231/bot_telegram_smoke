@@ -104,7 +104,7 @@ System.out.println("user = false");
                         bd.Conn();
                         bd.CreateDB();
 
-                        if(user==false && !bd.getUsers().isEmpty()){
+                        if((user==false && !bd.getUsers().isEmpty()) | (user == false && bd.getUsers().isEmpty())){
                             if(update.getMessage().getFrom().getLastName()!=null) {
                                 bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
                             }else{

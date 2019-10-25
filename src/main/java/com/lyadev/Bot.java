@@ -80,7 +80,7 @@ System.out.println("user = false");
                                     System.out.println("K = "+k);
                                     System.out.println(update.getMessage().getFrom().getFirstName() +"||"+ String.valueOf(bd.getUsers().get(i).get(k)));
                                 }
-
+System.out.println(bd.getUsers());
                                 String firstusername = update.getMessage().getFrom().getFirstName();
                                 String secondusername;
                                 if(update.getMessage().getFrom().getLastName()!=null) {

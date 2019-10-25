@@ -34,7 +34,7 @@ public class Bot extends TelegramLongPollingBot {
     boolean key = true;
     //boolean admin = false;
     String admin = null;
-    boolean run = true;
+    boolean run = false;
     @Override
     public void onUpdateReceived(Update update) {
        boolean user = false;

@@ -127,14 +127,14 @@ public static ArrayList<ArrayList<String>> getUsers() throws ClassNotFoundExcept
 
 public static void changename(int ID, String name){
     try {
-        statmt.executeQuery("UPDATE USERS SET USERNAME_FIRSTNAME = " + "'" + name + "'"+" WHERE USER_LOCAL_ID = "+ID);
+        statmt.executeUpdate("UPDATE USERS SET USERNAME_FIRSTNAME = " + "'" + name + "'"+" WHERE USER_LOCAL_ID = "+ID);
     } catch (SQLException e) {
         e.printStackTrace();
     }
 }
     public static void changesname(int ID, String sname){
         try {
-            statmt.executeQuery("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + sname + "'"+" WHERE USER_LOCAL_ID = "+ID);
+            statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + sname + "'"+" WHERE USER_LOCAL_ID = "+ID);
         } catch (SQLException e) {
             e.printStackTrace();
         }

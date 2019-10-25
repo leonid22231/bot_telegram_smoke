@@ -70,8 +70,8 @@ public class Bot extends TelegramLongPollingBot {
                         bd.CloseDB();
                         bd.Conn();
                         bd.CreateDB();
-                        System.out.println(bd.getUsers().isEmpty());
-                        if(bd.getUsers().isEmpty()==true) {
+                        System.out.println(bd.getUsers().size());
+                        if(bd.getUsers().size()==0) {
                             if(update.getMessage().getFrom().getLastName()!=null) {
                                 bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
                             }else{

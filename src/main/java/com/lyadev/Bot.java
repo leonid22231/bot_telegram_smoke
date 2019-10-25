@@ -83,7 +83,7 @@ public class Bot extends TelegramLongPollingBot {
                                 System.out.println(update.getMessage().getFrom().getFirstName() +"||"+ String.valueOf(bd.getUsers().get(i)));
                                 String username = update.getMessage().getFrom().getFirstName();
                                 String name = bd.getUsers().get(i);
-                                if(username.equals(name)==true){
+                                if(username.intern().equals(name.intern())==true){
 
                                     user = true;
                                 }
@@ -93,15 +93,17 @@ public class Bot extends TelegramLongPollingBot {
                         bd.Conn();
                         bd.CreateDB();
 
-                        if(user==false || !bd.getUsers().isEmpty()){
+                        if(user==false && !bd.getUsers().isEmpty()){
                             if(update.getMessage().getFrom().getLastName()!=null) {
                                 bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
                             }else{
                                 bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getChatId());
                             }
                             System.out.println("User " + update.getMessage().getFrom().getFirstName() +" is create");
+                            sendMsg(idchat,"Ты уже существуешь )");
                         }else {
                             System.out.println("User " + update.getMessage().getFrom().getFirstName() + "существуе");
+                            sendMsg(idchat,"Привет , новый пользователь !");
                         }
                     } catch (SQLException | ClassNotFoundException | URISyntaxException e) {
                         e.printStackTrace();

@@ -83,7 +83,7 @@ public class bd {
         System.out.println("Таблица выведена");
     }
 public static ArrayList<String> getUsers() throws ClassNotFoundException, SQLException{
-    resSet = statmt.executeQuery("SELECT * FROM USERS");
+    resSet = statmt.executeQuery("SELECT USERS");
     ArrayList<String> users = new ArrayList<>();
     System.out.println("LOG "+ resSet);
     while(resSet.next()){

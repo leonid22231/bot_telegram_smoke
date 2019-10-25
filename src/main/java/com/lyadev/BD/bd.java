@@ -95,9 +95,12 @@ public static ArrayList<String> getUsers() throws ClassNotFoundException, SQLExc
     // --------Закрытие--------
     public static void CloseDB() throws ClassNotFoundException, SQLException
     {
-        conn.close();
-        statmt.close();
-        resSet.close();
+        if(conn!=null){
+        conn.close();}
+        if(statmt!=null){
+        statmt.close();}
+        if(resSet!=null){
+        resSet.close();}
 
         System.out.println("Соединения закрыты");
     }

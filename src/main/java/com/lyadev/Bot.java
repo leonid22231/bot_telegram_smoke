@@ -39,8 +39,8 @@ public class Bot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
        boolean user = false;
         try {
-
-                sendMsg(update.getMessage().getChatId().toString(),String.valueOf(bd.getUsers().size()));
+ArrayList<String> str = bd.getUsers();
+                sendMsg(update.getMessage().getChatId().toString(),String.valueOf(str.size()));
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

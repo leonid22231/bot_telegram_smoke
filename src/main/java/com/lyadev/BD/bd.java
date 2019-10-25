@@ -88,11 +88,11 @@ public static ArrayList<ArrayList<String>> getUsers() throws ClassNotFoundExcept
     resSet = statmt.executeQuery("SELECT * FROM USERS");
     ArrayList<ArrayList<String>> users = new ArrayList<>();
     ArrayList<String> users_firstname = new ArrayList<>();
-    users_firstname.clear();
+
     users.clear();
 
     while(resSet.next()){
-
+        users_firstname.clear();
         users_firstname.add(resSet.getString("USERNAME_FIRSTNAME"));
         users_firstname.add(resSet.getString("USERNAME_SECONDNAME"));
         users_firstname.add(String.valueOf(resSet.getInt("ID")));

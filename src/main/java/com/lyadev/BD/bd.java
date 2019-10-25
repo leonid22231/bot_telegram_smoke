@@ -177,7 +177,7 @@ public static void changename(int ID, String name){
     }
     public static int getID(String telegram_id) throws SQLException {
         int ID = 0;
-        resSet = statmt.executeQuery("SELECT * FROM USERS WHERE ID = "+telegram_id);
+        resSet = statmt.executeQuery("SELECT * FROM USERS WHERE ID = "+Integer.valueOf(telegram_id));
         ID = resSet.getInt("USER_LOCAL_ID");
         return ID;
     }

@@ -87,12 +87,12 @@ System.out.println(data);
                                 String secondusername;
                                 if(update.getMessage().getFrom().getLastName()!=null) {
                                     secondusername = update.getMessage().getFrom().getLastName();
-                                }else{secondusername = null;}
+                                }else{secondusername = "null";}
                                 String firstname = data.get(i).get(0);
                                 String secondname;
                                 if(data.get(i).get(1)!=null) {
                                     secondname = data.get(i).get(1);
-                                }else{secondname = null;}
+                                }else{secondname = "null";}
                                 String iduser = data.get(i).get(2);
 
                                 if(secondusername != null) {

@@ -83,7 +83,7 @@ public class Bot extends TelegramLongPollingBot {
                                 System.out.println(update.getMessage().getFrom().getFirstName() +"||"+ String.valueOf(bd.getUsers().get(i)));
                                 String username = update.getMessage().getFrom().getFirstName();
                                 String name = bd.getUsers().get(i);
-                                if(username.intern().equals(name.intern())==true){
+                                if(username.equals(name)==true){
 
                                     user = true;
                                 }

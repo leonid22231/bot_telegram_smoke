@@ -90,9 +90,11 @@ public class Bot extends TelegramLongPollingBot {
                                 if(secondusername != null) {
                                     if (((firstusername.equals(firstname) && secondusername.equals(secondname)) | String.valueOf(idchat).equals(iduser))==true) {
                                         user = true;
+                                        System.out.println("User = true");
                                     }else{
                                         if ((firstusername.equals(firstname) | idchat.equals(iduser)==true)){
                                             user = true;
+                                            System.out.println("User = true");
                                         }
                                     }
                                 }
@@ -102,7 +104,7 @@ public class Bot extends TelegramLongPollingBot {
                         bd.Conn();
                         bd.CreateDB();
 
-                        if(user==false & !bd.getUsers().isEmpty()){
+                        if(user==false && !bd.getUsers().isEmpty()){
                             if(update.getMessage().getFrom().getLastName()!=null) {
                                 bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
                             }else{

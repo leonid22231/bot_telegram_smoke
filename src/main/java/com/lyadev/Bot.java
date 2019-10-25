@@ -70,28 +70,30 @@ public class Bot extends TelegramLongPollingBot {
                         bd.CloseDB();
                         bd.Conn();
                         bd.CreateDB();
-                        if(bd.getUsers().isEmpty()) {
+                        ArrayList<ArrayList<String>> data = bd.getUsers();
+                        if(data.isEmpty()) {
                             user = false;
 System.out.println("user = false");
                         }else {
-                            for(int i = 0 ; i<bd.getUsers().size();i++){
-                                for(int k = 0 ; k < bd.getUsers().get(i).size(); k++){
+                            for(int i = 0 ; i<data.size();i++){
+                                for(int k = 0 ; k < data.get(i).size(); k++){
                                     System.out.println("I = "+i);
                                     System.out.println("K = "+k);
-                                    System.out.println(update.getMessage().getFrom().getFirstName() +"||"+ String.valueOf(bd.getUsers().get(i).get(k)));
+                                    System.out.println(update.getMessage().getFrom().getFirstName() +"||"+ String.valueOf(data.get(i).get(k)));
                                 }
-System.out.println(bd.getUsers());
+System.out.println(data);
+
                                 String firstusername = update.getMessage().getFrom().getFirstName();
                                 String secondusername;
                                 if(update.getMessage().getFrom().getLastName()!=null) {
                                     secondusername = update.getMessage().getFrom().getLastName();
                                 }else{secondusername = null;}
-                                String firstname = bd.getUsers().get(i).get(0);
+                                String firstname = data.get(i).get(0);
                                 String secondname;
-                                if(bd.getUsers().get(i).get(1)!=null) {
-                                    secondname = bd.getUsers().get(i).get(1);
+                                if(data.get(i).get(1)!=null) {
+                                    secondname = data.get(i).get(1);
                                 }else{secondname = null;}
-                                String iduser = bd.getUsers().get(i).get(2);
+                                String iduser = data.get(i).get(2);
 
                                 if(secondusername != null) {
                                     System.out.println("ID : > " + idchat.equals(iduser) + "NAME 1 : > " + firstusername.equals(firstname) + "NAME 2 : > " + secondusername.equals(secondname));
@@ -115,7 +117,7 @@ System.out.println(bd.getUsers());
                         bd.Conn();
                         bd.CreateDB();
 
-                        if((user==false && !bd.getUsers().isEmpty()) | (user == false && bd.getUsers().isEmpty())){
+                        if((user==false && !data.isEmpty()) | (user == false && data.isEmpty())){
                             if(update.getMessage().getFrom().getLastName()!=null) {
                                 bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());
                             }else{

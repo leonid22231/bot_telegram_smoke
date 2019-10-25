@@ -96,23 +96,27 @@ System.out.println(data);
                                 String iduser = data.get(i).get(2);
 
                                 if(secondusername != null) {
-                                    System.out.println("ID : > " + idchat.equals(iduser) + "NAME 1 : > " + firstusername.equals(firstname) + "NAME 2 : > " + secondusername.equals(secondname));
+                                    System.out.println("ID : > " + idchat.equals(iduser) + " NAME 1 : > " + firstusername.equals(firstname) + " NAME 2 : > " + secondusername.equals(secondname));
                                 }else{
-                                    System.out.println("ID : > " + idchat.equals(iduser) + "NAME 1 : > " + firstusername.equals(firstname) + "NAME 2 : > " + null);
+                                    System.out.println("ID : > " + idchat.equals(iduser) + " NAME 1 : > " + firstusername.equals(firstname) + " NAME 2 : > " + null);
                                 }
                                 if(String.valueOf(idchat).equals(iduser)==true){
                                     user = true;
                                     if(secondusername.equals(secondname)){
                                     }else {
-                                        System.out.println("Фамилия была изменена c "+ secondname+"на "+secondusername);
+                                        bd.changesname(i,secondusername);
+                                        System.out.println("Фамилия была изменена c "+ secondname+" на "+secondusername);
                                     }
                                     if(firstusername.equals(firstname)){
 
                                     }else {
-                                        System.out.println("Имя было изменено с"+ firstname+"на "+firstusername);
+                                        bd.changename(i,firstusername);
+                                        System.out.println("Имя было изменено с"+ firstname+" на "+firstusername);
                                     }
                                     System.out.println("User : > "+firstname);
+                                    break ;
                                 }
+
 //                                if(secondusername != null) {
 //                                    if (((firstusername.equals(firstname) && secondusername.equals(secondname)) && String.valueOf(idchat).equals(iduser))==true) {
 //                                        user = true;

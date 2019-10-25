@@ -113,7 +113,7 @@ public class Bot extends TelegramLongPollingBot {
                     } catch (SQLException | ClassNotFoundException | URISyntaxException e) {
                         e.printStackTrace();
                     }
-                    sendMsg(idchat, "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");
+                    sendMsg(idchat, "Ну пиздец конечно " + new Date().toString());
 
                 }
                 if (message.equals("Поддержать бота")) {

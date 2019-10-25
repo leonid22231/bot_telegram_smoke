@@ -87,7 +87,7 @@ public static ArrayList<String> getUsers() throws ClassNotFoundException, SQLExc
     ArrayList<String> users = new ArrayList<>();
     System.out.println("LOG "+ resSet);
     while(resSet.next()){
-        users.add(resSet.getString("USERNAME"));
+        users.add(resSet.getString("USER_LOCAL_ID"));
     }
     System.out.println(users.get(0));
     return users;

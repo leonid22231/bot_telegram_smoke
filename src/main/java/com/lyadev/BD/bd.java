@@ -92,6 +92,7 @@ public static ArrayList<ArrayList<String>> getUsers() throws ClassNotFoundExcept
     users.clear();
 
     while(resSet.next()){
+        System.out.println(resSet.getString("USERNAME_FIRSTNAME"));
         ArrayList<String> users_firstname = new ArrayList<>();
         users_firstname.add(resSet.getString("USERNAME_FIRSTNAME"));
         users_firstname.add(resSet.getString("USERNAME_SECONDNAME"));

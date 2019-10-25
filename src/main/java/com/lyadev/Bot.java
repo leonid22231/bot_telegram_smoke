@@ -100,10 +100,11 @@ public class Bot extends TelegramLongPollingBot {
                                 bd.AddUser(update.getMessage().getFrom().getFirstName() , update.getMessage().getChatId());
                             }
                             System.out.println("User " + update.getMessage().getFrom().getFirstName() +" is create");
-                            sendMsg(idchat,"Ты уже существуешь )");
+
+                            sendMsg(idchat,"Привет , новый пользователь !");
                         }else {
                             System.out.println("User " + update.getMessage().getFrom().getFirstName() + "существуе");
-                            sendMsg(idchat,"Привет , новый пользователь !");
+                            sendMsg(idchat,"Ты уже существуешь )");
                         }
                     } catch (SQLException | ClassNotFoundException | URISyntaxException e) {
                         e.printStackTrace();

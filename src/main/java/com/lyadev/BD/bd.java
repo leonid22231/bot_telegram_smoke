@@ -147,28 +147,28 @@ public static void changename(int ID, String name){
         try {
             switch (state) {
                 case 0 :
-                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "MENU" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    statmt.executeUpdate("UPDATE USERS SET STATE = " + "'" + "MENU" + "'" + " WHERE USER_LOCAL_ID = " + ID);
                     break;
                 case 1:
-                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "MENU_1" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    statmt.executeUpdate("UPDATE USERS SET STATE = " + "'" + "MENU_1" + "'" + " WHERE USER_LOCAL_ID = " + ID);
                     break;
                 case 2:
-                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "Menu_2" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    statmt.executeUpdate("UPDATE USERS SET STATE = " + "'" + "Menu_2" + "'" + " WHERE USER_LOCAL_ID = " + ID);
                     break;
                 case 3:
-                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "Menu_3" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    statmt.executeUpdate("UPDATE USERS SET STATE = " + "'" + "Menu_3" + "'" + " WHERE USER_LOCAL_ID = " + ID);
                     break;
                 case 4:
-                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "Menu_4" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    statmt.executeUpdate("UPDATE USERS SET STATE = " + "'" + "Menu_4" + "'" + " WHERE USER_LOCAL_ID = " + ID);
                     break;
                 case 5:
-                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "Menu_5" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    statmt.executeUpdate("UPDATE USERS SET STATE = " + "'" + "Menu_5" + "'" + " WHERE USER_LOCAL_ID = " + ID);
                     break;
                 case 9:
-                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "DEV_PASS" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    statmt.executeUpdate("UPDATE USERS SET STATE = " + "'" + "DEV_PASS" + "'" + " WHERE USER_LOCAL_ID = " + ID);
                     break;
                 default:
-                    statmt.executeUpdate("UPDATE USERS SET USERNAME_SECONDNAME = " + "'" + "MENU" + "'" + " WHERE USER_LOCAL_ID = " + ID);
+                    statmt.executeUpdate("UPDATE USERS SET STATE = " + "'" + "MENU" + "'" + " WHERE USER_LOCAL_ID = " + ID);
                     break;
             }
         } catch (SQLException e) {

@@ -77,7 +77,10 @@ System.out.println("user = false");
                             for(int i = 0 ; i<bd.getUsers().size();i++){
                                 System.out.println(update.getMessage().getFrom().getFirstName() +"||"+ String.valueOf(bd.getUsers().get(i).get(0)));
                                 String firstusername = update.getMessage().getFrom().getFirstName();
-                                String secondusername = update.getMessage().getFrom().getLastName();
+                                String secondusername;
+                                if(update.getMessage().getFrom().getLastName()!=null) {
+                                    secondusername = update.getMessage().getFrom().getLastName();
+                                }else{secondusername = null;}
                                 String firstname = bd.getUsers().get(i).get(0);
                                 String secondname;
                                 if(bd.getUsers().get(i).get(1)!=null) {

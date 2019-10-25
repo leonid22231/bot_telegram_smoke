@@ -22,6 +22,7 @@ import org.telegram.telegrambots.logging.BotLogger;
 
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -74,6 +75,7 @@ public class Bot extends TelegramLongPollingBot {
                 if (message.equals("/start")) {
                     try {
                         bd.CloseDB();
+                        bd.Conn();
                         bd.CreateDB();
                         System.out.println(bd.getUsers().isEmpty());
                         if(bd.getUsers().isEmpty()==true) {
@@ -100,7 +102,7 @@ public class Bot extends TelegramLongPollingBot {
                         }else {
                             System.out.println("User " + update.getMessage().getFrom().getFirstName() + "существуе");
                         }
-                    } catch (SQLException | ClassNotFoundException e) {
+                    } catch (SQLException | ClassNotFoundException | URISyntaxException e) {
                         e.printStackTrace();
                     }
                     sendMsg(idchat, "Текст ещё не придуман , но ты новый пользователь , поздравляю )24.10.2019 4:21");

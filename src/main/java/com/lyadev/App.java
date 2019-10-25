@@ -24,7 +24,7 @@ public class App
 
     public static void main( String[] args ) throws SQLException, ClassNotFoundException, URISyntaxException {
         System.out.println("Starting...");
-        bd.Conn();
+
 
         ApiContextInitializer.init();
         TelegramBotsApi botapi = new TelegramBotsApi();

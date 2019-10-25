@@ -34,21 +34,12 @@ public class Bot extends TelegramLongPollingBot {
     boolean key = true;
     //boolean admin = false;
     String admin = null;
-    boolean run = false;
+    boolean run = true;
     @Override
     public void onUpdateReceived(Update update) {
        boolean user = false;
         try {
             bd.CreateDB();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        try {
-ArrayList<Integer> str = bd.getUsers();
-                sendMsg(update.getMessage().getChatId().toString(),String.valueOf(str.size()));
-
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -82,7 +73,6 @@ ArrayList<Integer> str = bd.getUsers();
 
                 if (message.equals("/start")) {
                     try {
-                        bd.CreateDB();
                         if(!bd.getUsers().isEmpty()) {
                             if(update.getMessage().getFrom().getLastName()!=null) {
                                 bd.AddUser(update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName(), update.getMessage().getChatId());

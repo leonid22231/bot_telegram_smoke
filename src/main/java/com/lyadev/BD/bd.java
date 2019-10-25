@@ -82,12 +82,12 @@ public class bd {
 
         System.out.println("Таблица выведена");
     }
-public static ArrayList<String> getUsers() throws ClassNotFoundException, SQLException{
+public static ArrayList<Integer> getUsers() throws ClassNotFoundException, SQLException{
     resSet = statmt.executeQuery("SELECT * FROM USERS");
-    ArrayList<String> users = new ArrayList<>();
+    ArrayList<Integer> users = new ArrayList<>();
     System.out.println("LOG "+ resSet);
     while(resSet.next()){
-        users.add(resSet.getString("USER_LOCAL_ID"));
+        users.add(resSet.getInt("USER_LOCAL_ID"));
     }
     System.out.println(users.get(0));
     return users;

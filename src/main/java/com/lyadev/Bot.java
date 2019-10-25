@@ -105,7 +105,7 @@ System.out.println(data);
                                         user = true;
                                         System.out.println("User = true");
                                     }else{
-                                        if ((firstusername.equals(firstname) | idchat.equals(iduser)==true)){
+                                        if ((firstusername.equals(firstname) && idchat.equals(iduser))==true){
                                             user = true;
                                             System.out.println("User = true");
                                         }

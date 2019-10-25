@@ -79,11 +79,12 @@ System.out.println("user = false");
                                 String firstusername = update.getMessage().getFrom().getFirstName();
                                 String secondusername = update.getMessage().getFrom().getLastName();
                                 String firstname = bd.getUsers().get(i).get(0);
-                                String secondname = bd.getUsers().get(i).get(1);
-                                String iduser;
-                                if(bd.getUsers().get(i).get(2)!=null) {
-                                    iduser = bd.getUsers().get(i).get(2);
-                                }else {iduser = null;}
+                                String secondname;
+                                if(bd.getUsers().get(i).get(1)!=null) {
+                                    secondname = bd.getUsers().get(i).get(1);
+                                }else{secondname = null;}
+                                String iduser = bd.getUsers().get(i).get(2);
+
                                 if(secondusername != null) {
                                     System.out.println("ID : > " + idchat.equals(iduser) + "NAME 1 : > " + firstusername.equals(firstname) + "NAME 2 : > " + secondusername.equals(secondname));
                                 }else{

@@ -85,7 +85,7 @@ ArrayList<Integer> str = bd.getUsers();
 
                         }else {
                             for(int i = 0 ; i<bd.getUsers().size();i++){
-                                if(update.getMessage().getFrom().getFirstName() == bd.getUsers().get(i)){
+                                if(update.getMessage().getFrom().getFirstName() == String.valueOf(bd.getUsers().get(i))){
                                     user = true;
                                 }
                             }
